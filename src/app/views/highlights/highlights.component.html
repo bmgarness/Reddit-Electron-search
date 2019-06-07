@@ -1,1 +1,3 @@
-<p>{{highlights | json}}</p>
+<div *ngFor="let names of highlights.subreddit_names">
+    <a (click)="pagelink(names)">{{names}}</a>
+</div>

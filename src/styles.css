@@ -1,1 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
+
+.main-body {
+    margin-right: 2em;
+    margin-top: 2em;
+    margin-left: 2em;
+}

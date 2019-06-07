@@ -1,4 +1,5 @@
 <div class="col">
-  <ngx-select [defaultValue]="[]" [items]="autocompleteResults" (typed)="startAutocomplete($event)"></ngx-select>
-  <button>Search</button>
+  <ngx-select [defaultValue]="[]" [items]="autocompleteResults"
+              (select)="clicked($event)" (typed)="startAutocomplete($event)"></ngx-select>
+  <button (click)="newPost()">Search</button>
 </div>

@@ -15,7 +15,7 @@ function createWindow () {
   })
 
   // and load the index.html of the app.
-  win.loadFile('dist/angular7app/index.html')
+  win.loadFile('dist/Reddit-Electron-Search/index.html')
 
   // Open the DevTools.
   win.webContents.openDevTools()

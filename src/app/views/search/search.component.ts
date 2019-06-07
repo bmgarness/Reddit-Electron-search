@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AutocompleteService} from '../../services/autocomplete/autocomplete.service';
+import {FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-search',
@@ -7,8 +8,10 @@ import {AutocompleteService} from '../../services/autocomplete/autocomplete.serv
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  @Output() postSearch = new EventEmitter<string>();
 
   public autocompleteResults;
+  public search: string;
 
   constructor(
     private autocompleteService: AutocompleteService,
@@ -23,8 +26,15 @@ export class SearchComponent implements OnInit {
         this.autocompleteResults = results.data.children.map((object: any) => {
           return object.data.display_name_prefixed;
         });
-        console.log(this.autocompleteResults);
       });
+  }
+
+  public newPost() {
+    this.postSearch.emit(this.search);
+  }
+
+  public clicked(search: string) {
+    this.search = search;
   }
 
 }

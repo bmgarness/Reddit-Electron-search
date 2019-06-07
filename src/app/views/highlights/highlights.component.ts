@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {HighlightsService} from '../../services/highlights/highlights.service';
 
 @Component({
@@ -7,6 +7,7 @@ import {HighlightsService} from '../../services/highlights/highlights.service';
   styleUrls: ['./highlights.component.css']
 })
 export class HighlightsComponent implements OnInit {
+  @Output() highlightSearch = new EventEmitter<string>();
 
   public highlights: any;
 
@@ -19,6 +20,10 @@ export class HighlightsComponent implements OnInit {
       .subscribe((results) => {
         this.highlights = {subreddit_names: results.subreddit_names};
       });
+  }
+
+  public pagelink(search: string) {
+    this.highlightSearch.emit(search);
   }
 
 }

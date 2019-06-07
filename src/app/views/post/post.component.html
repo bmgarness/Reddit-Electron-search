@@ -1,3 +1,8 @@
-<p>
-  post works!
-</p>
+<div *ngIf="viewingPost">
+  <div class="row">
+    <div class="col">
+      <h3>{{postInfo.title}}</h3>
+      <a href="{{postInfo.url}}">{{postInfo.url}}</a>
+    </div>
+  </div>
+</div>

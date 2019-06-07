@@ -1,6 +1,8 @@
-<h1>
-  Reddit Search
-</h1>
-<app-search></app-search>
-<app-post></app-post>
-<app-highlights></app-highlights>
+<div class="main-body">
+  <h1>
+    Reddit Search
+  </h1>
+  <app-search (postSearch)="posted($event)"></app-search>
+  <app-post [post]="newPost"></app-post>
+  <app-highlights (highlightSearch)="posted($event)"></app-highlights>
+</div>

@@ -25,4 +25,4 @@ And finally:
 ```
 npm run electron
 ```
-v0.1
+v1.0
